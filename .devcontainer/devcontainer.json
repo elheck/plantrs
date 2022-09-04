@@ -1,0 +1,21 @@
+{
+	"name": "EspRust",
+	"build": {
+		"dockerfile": "Dockerfile"
+	
+	},
+
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"features": {
+		"git": "latest",
+		"git-lfs": "latest"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"yzhang.markdown-all-in-one",
+				"rust-lang.rust-analyzer"
+			]
+		}
+	}
+}
