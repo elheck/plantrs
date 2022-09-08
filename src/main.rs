@@ -9,7 +9,7 @@ use esp_idf_svc::wifi::EspWifi;
 use embedded_svc::wifi::Configuration;
 use embedded_svc::wifi::ClientConfiguration;
 
-pub mod settings;
+mod settings;
 
 // This is a config file that defines the following private parameter constants
 use crate::settings::SSID;
