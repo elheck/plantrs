@@ -1,9 +1,7 @@
 # plantrs
 
 ## Dev Containers
-This repository offers Dev Containers supports for:
--  [Gitpod](https://gitpod.io/)
-   - ["Open in Gitpod" button](https://www.gitpod.io/docs/getting-started#open-in-gitpod-button)
+This repository offers Dev Containers supports for
 -  [VS Code Dev Containers](https://code.visualstudio.com/docs/remote/containers#_quick-start-open-an-existing-folder-in-a-container)
 -  [GitHub Codespaces](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace)
 > **Note**
