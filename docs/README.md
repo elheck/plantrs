@@ -6,9 +6,6 @@ This repository offers Dev Containers supports for
 -  [GitHub Codespaces](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace)
 > **Note**
 >
-> In order to use Gitpod the project needs to be published in a GitLab, GitHub,
-> or Bitbucket repository.
->
 > In [order to use GitHub Codespaces](https://github.com/features/codespaces#faq)
 > the project needs to be published in a GitHub repository and the user needs
 > to be part of the Codespaces beta or have the project under an organization.
