@@ -1,5 +1,5 @@
 
-use esp_idf_hal::gpio::{Gpio32, Output};
+use esp_idf_hal::gpio::{Gpio2, Output};
 use esp_idf_svc::wifi::EspWifi;
 use esp_idf_hal::delay::FreeRtos;
 use embedded_hal::blocking::delay::DelayMs;
@@ -17,13 +17,13 @@ fn main() {
     let _wifi:EspWifi = connect_wifi().unwrap();
 
     esp_idf_svc::log::EspLogger::initialize_default();
-    let pin2 = Peripherals::take().unwrap().pins.gpio32.into_output().unwrap();
-    let mut switch: Switch<Gpio32<Output>> = Switch::new(pin2);
+    let pin2 = Peripherals::take().unwrap().pins.gpio2.into_output().unwrap();
+    let mut switch: Switch<Gpio2<Output>> = Switch::new(pin2);
 
     let mut delay = FreeRtos;
     loop{
         switch.toggle().unwrap();
         log::info!("Pin State: {:?}", switch.current_state);
-        delay.delay_ms(2000 as u32);
+        delay.delay_ms(2000_u32);
     }
 }
