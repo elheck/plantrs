@@ -23,7 +23,7 @@ fn main() {
     let mut delay = FreeRtos;
     loop{
         switch.toggle().unwrap();
-        println!("Pin State: {:?}", switch.current_state);
+        log::info!("Pin State: {:?}", switch.current_state);
         delay.delay_ms(2000 as u32);
     }
 }
