@@ -1,29 +1,32 @@
-
-use esp_idf_hal::gpio::{Gpio2, Output};
+use std::thread;
+use std::time;
 use esp_idf_svc::wifi::EspWifi;
-use esp_idf_hal::delay::FreeRtos;
-use embedded_hal::blocking::delay::DelayMs;
 use esp_idf_hal::peripherals::Peripherals;
 
 // This is a config file that defines the following private parameter constants
 mod settings;
+
+mod pump;
+use crate::pump::Pump;
+
 mod wifi;
 use crate::wifi::connect_wifi;
 
 mod pin_switch;
-use crate::pin_switch::{Switch, Togglable};
+use crate::pin_switch::Switch;
 
 fn main() {
     let _wifi:EspWifi = connect_wifi().unwrap();
 
     esp_idf_svc::log::EspLogger::initialize_default();
     let pin2 = Peripherals::take().unwrap().pins.gpio2.into_output().unwrap();
-    let mut switch: Switch<Gpio2<Output>> = Switch::new(pin2);
+    let pin17 = Peripherals::take().unwrap().pins.gpio17.into_output().unwrap();
+    let led_switch = Switch::new(pin2);
+    let pump_switch = Switch::new(pin17);
 
-    let mut delay = FreeRtos;
+    let mut pump = Pump::new(led_switch, pump_switch);
     loop{
-        switch.toggle().unwrap();
-        log::info!("Pin State: {:?}", switch.current_state);
-        delay.delay_ms(2000_u32);
+        pump.turn_on_blocking(time::Duration::from_millis(1000));
+        thread::sleep(time::Duration::from_millis(1000));
     }
 }
