@@ -16,7 +16,7 @@ pub struct Switch<Gpio: OutputPin + StatefulOutputPin>{
 }
 
 impl<Gpio: OutputPin + StatefulOutputPin> Switch<Gpio> {
-    pub fn new(pin: Gpio)-> Switch<Gpio>{
+    pub fn new(pin: Gpio)-> Self{
         Switch{current_state: PinState::Low, pin}
     }    
 }
