@@ -7,6 +7,7 @@ use esp_idf_hal::peripherals::Peripherals;
 // This is a config file that defines the following private parameter constants
 mod settings;
 mod dht;
+use crate::dht::DHTs;
 
 mod pump;
 use crate::pump::Pump;
@@ -26,6 +27,7 @@ fn main() {
     let led_switch = Switch::new(pin2);
     let pump_switch = Switch::new(pin17);  
     let mut pump = Pump::new(led_switch, pump_switch);
+    let dhts = DHTs::new(vec![(33, "Test")]);
 
     loop{
         pump.turn_on_blocking(time::Duration::from_millis(1000));
