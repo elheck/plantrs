@@ -11,7 +11,7 @@ pub struct Pump<LedSwitch: Togglable, PumpSwitch: Togglable>{
 }
 
 impl<LedSwitch: Togglable, PumpSwitch: Togglable> Pump<LedSwitch, PumpSwitch> {
-    pub fn new(indicator_led: LedSwitch, pump_pin: PumpSwitch) -> Pump<LedSwitch, PumpSwitch>{
+    pub fn new(indicator_led: LedSwitch, pump_pin: PumpSwitch) -> Self{
         Pump{indicator_led, pump_pin}
     }
 
