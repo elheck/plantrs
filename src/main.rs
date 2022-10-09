@@ -18,6 +18,9 @@ use crate::wifi::connect_wifi;
 mod pin_switch;
 use crate::pin_switch::Switch;
 
+
+static TEST_DHT: (u8, &str) = (33, "Test");
+
 fn main() {
     let _wifi:EspWifi = connect_wifi().unwrap();
 
@@ -27,7 +30,7 @@ fn main() {
     let led_switch = Switch::new(pin2);
     let pump_switch = Switch::new(pin17);  
     let mut pump = Pump::new(led_switch, pump_switch);
-    let dhts = DHTs::new(vec![(33, "Test")]);
+    let dhts = DHTs::new(vec![TEST_DHT]);
 
     loop{
         pump.turn_on_blocking(time::Duration::from_millis(1000));
