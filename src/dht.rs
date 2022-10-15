@@ -10,7 +10,7 @@ impl DHTs{
     pub fn new(pins: Vec<(u8, &str)>) -> Self{
         let mut instance = Self{dhts: Vec::new()};
         for (pin, name) in pins.iter(){
-            let gpio = DHTs::get_gpio(pin).unwrap();
+            let gpio = Self::get_gpio(pin).unwrap();
             instance.dhts.push((name.to_string(), Box::new(gpio)));
         }
         instance
