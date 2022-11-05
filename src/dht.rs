@@ -1,9 +1,9 @@
 
-use esp_idf_hal::{prelude::Peripherals, gpio::{InputOutput, GpioPin}};
-use std::any::Any;
+use dht11::{Dht11, Measurement};
+use esp_idf_hal::{prelude::Peripherals, gpio::{InputOutput, GpioPin}, delay::Ets};
 
 pub struct DHTs{
-    dhts: Vec<(String, Box<dyn Any>)>
+    dhts: Vec<(String, Box<Dht11<GpioPin<InputOutput>>>)>
 }
 
 impl DHTs{
@@ -11,7 +11,8 @@ impl DHTs{
         let mut instance = Self{dhts: Vec::new()};
         for (pin, name) in pins.iter(){
             let gpio = Self::get_gpio(pin).unwrap();
-            instance.dhts.push((name.to_string(), Box::new(gpio)));
+            let dht = Dht11::new(gpio);
+            instance.dhts.push((name.to_string(), Box::new(dht)));
         }
         instance
     }
@@ -26,4 +27,25 @@ impl DHTs{
             _ => Err("Pin not configurable for dht")
         }
     }
+
+    pub fn get_measurements(&mut self) -> Vec<(String, Measurement)>{
+        let mut delay = Ets{};
+        let mut measurement_vec = Vec::new();
+        for (name, dht) in self.dhts.iter_mut(){
+            let measurement = dht.perform_measurement(&mut delay).unwrap();
+            measurement_vec.push((name.clone(), measurement));
+        }
+        measurement_vec
+    }
+
+    pub fn get_measurement_for(&mut self, dht_name: &str) -> Result<Measurement, &'static str>{
+        let mut delay = Ets{};
+        for(name, dht) in self.dhts.iter_mut(){
+            if name.clone().eq(&String::from(dht_name)){
+                return Ok(dht.perform_measurement(&mut delay).unwrap());
+            }
+        }
+        Err("Name not found")
+    }
+    
 }

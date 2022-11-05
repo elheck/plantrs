@@ -18,8 +18,8 @@ use crate::wifi::connect_wifi;
 mod pin_switch;
 use crate::pin_switch::Switch;
 
-
-const TEST_DHT: (u8, &str) = (33, "Test");
+const TEST_NAME: &str = "Test";
+const TEST_DHT: (u8, &str) = (33, TEST_NAME);
 
 fn main() {
     let _wifi:EspWifi = connect_wifi().unwrap();
@@ -28,10 +28,12 @@ fn main() {
     let pin2 = Peripherals::take().unwrap().pins.gpio2.into_output().unwrap();
     let pin17 = Peripherals::take().unwrap().pins.gpio17.into_output().unwrap();
     let mut pump = Pump::new(Switch::new(pin2), Switch::new(pin17));
-    let dhts = DHTs::new(vec![TEST_DHT]);
+    let mut dhts = DHTs::new(vec![TEST_DHT]);
 
     loop{
         pump.turn_on_blocking(time::Duration::from_millis(1000));
         thread::sleep(time::Duration::from_millis(1000));
+        dhts.get_measurements();
+        dhts.get_measurement_for(TEST_NAME).unwrap();
     }
 }
