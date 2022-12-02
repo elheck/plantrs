@@ -1,4 +1,6 @@
 # plantrs
 
+## Scope
+Raspi pi pico 
+
 ## General
-- Project was generated with https://github.com/esp-rs/esp-idf-template
