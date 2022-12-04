@@ -1,13 +1,28 @@
 
-use rp_pico::{hal::{gpio::{Output, PushPull, PinId, Pin, pin::{Disabled}, PushPullOutput, DynPinId, PullDown}}};
+use embedded_hal::digital::v2::OutputPin;
+use rp_pico::hal::gpio::{DynPin, Error};
+
+
 
 pub struct Pump{
-    indicator: Pin<dyn PinId<Reset = Disabled<PullDown>>, PushPullOutput>,
-    pump_switch: Pin<dyn PinId<Reset = Disabled<PullDown>>, PushPullOutput>
+    indicator: DynPin,
+    pump_switch: DynPin
 }
 
 impl Pump{
-    pub fn new<IndicatorGpioId: PinId, PumpGpioId: PinId> (indicator: IndicatorGpioId, pump_switch: PumpGpioId) -> Self{
+    pub fn new(indicator: DynPin, pump_switch: DynPin) -> Self{
         Pump { indicator, pump_switch }
+    }
+
+    pub fn turn_on(&mut self) -> Result<(), Error>{
+        self.indicator.set_high()?;
+        self.pump_switch.set_high()?;
+        Ok(())
+    }
+
+    pub fn turn_off(&mut self) -> Result<(), Error>{
+        self.indicator.set_low()?;
+        self.pump_switch.set_low()?;
+        Ok(())
     }
 }
