@@ -1,10 +1,10 @@
 #![no_std]
 #![no_main]
 
+
 use bsp::entry;
-use defmt::*;
+use defmt::{info, panic};
 use defmt_rtt as _;
-use embedded_hal::digital::v2::OutputPin;
 use panic_probe as _;
 
 use rp_pico as bsp;
@@ -47,15 +47,21 @@ fn main() -> ! {
         &mut peripherals.RESETS,
     );
 
-    let mut led_pin = pins.led.into_push_pull_output();
+    let led_pin = pins.led.into_push_pull_output();
+    let pump_pin = pins.gpio2.into_push_pull_output();
+    let mut pump = Pump::new(led_pin.into(), pump_pin.into());
 
     loop {
-        info!("on!");
-        led_pin.set_high().unwrap();
-        delay.delay_ms(500);
-        info!("off!");
-        led_pin.set_low().unwrap();
-        delay.delay_ms(500);
+        match pump.turn_on(){
+            Ok(_) => info!("Pump on"),
+            Err(_) => panic!("Could not turn on pump")
+        };
+        delay.delay_ms(1000);
+        match pump.turn_off(){
+            Ok(_) => info!("Pump off"),
+            Err(_) => panic!("Could not turn off pump")
+        };
+        delay.delay_ms(1000);
     }
 }
 
