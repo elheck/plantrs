@@ -18,7 +18,8 @@ RUN apt-get update -qq && \
     minicom \
     curl \
     libudev-dev \
-    binutils-arm-none-eabi
+    binutils-arm-none-eabi \
+    htop
 
 RUN update-ca-certificates
 
