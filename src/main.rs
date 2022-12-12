@@ -56,9 +56,10 @@ fn main() -> ! {
     let dht_pin = pins.gpio3.into_readable_output();
 
     let mut pump = Pump::new(led_pin.into(), pump_pin.into());
-    let dht = Dht11::new(dht_pin.into());
+    let mut dht = Dht11::new(dht_pin.into());
 
     loop {
+        dht.read(&mut delay).unwrap();
         match pump.turn_on(){
             Ok(_) => info!("Pump on"),
             Err(_) => panic!("Could not turn on pump")
