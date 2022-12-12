@@ -5,6 +5,8 @@
 		"dockerfile": "Dockerfile"
 	},
 	"settings": {
+    "cortex-debug.objdumpPath": "/usr/bin/arm-none-eabi-objdump",
+    "cortex-debug.gdbPath": "gdb-multiarch",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "modifications",

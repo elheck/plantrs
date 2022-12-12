@@ -12,9 +12,10 @@
             "configFiles": ["interface/picoprobe.cfg", "target/rp2040.cfg"],
             // This may need to be gdb-multiarch depending on your system (i.e. Linux vs Mac)
             "gdbPath" : "gdb-multiarch",
+            "objdumpPath": "/usr/bin/arm-none-eabi-objdump",
             // Connect to an already running OpenOCD instance
             "gdbTarget": "localhost:3333",
-            // If you have the Pico SDK installed, allows the
+            // If you have the Pico SDK installed, allows thez
             // display of the RP2040 CPU registers in VS Code
             "svdFile": "${workspaceFolder}/rp2040.svd",
             "runToMain": true,

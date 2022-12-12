@@ -18,6 +18,10 @@ use bsp::hal::{
 mod pump;
 use crate::pump::Pump;
 
+mod dht;
+use crate::dht::Dht11;
+
+
 #[entry]
 fn main() -> ! {
     info!("Program start");
@@ -48,8 +52,11 @@ fn main() -> ! {
     );
 
     let led_pin = pins.led.into_push_pull_output();
-    let pump_pin = pins.gpio2.into_push_pull_output();
+    let pump_pin = pins.gpio4.into_push_pull_output();
+    let dht_pin = pins.gpio3.into_readable_output();
+
     let mut pump = Pump::new(led_pin.into(), pump_pin.into());
+    let dht = Dht11::new(dht_pin.into());
 
     loop {
         match pump.turn_on(){
