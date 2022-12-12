@@ -57,7 +57,7 @@ fn main() -> ! {
     let mut dht = Dht11::new(dht_pin.into());
 
     loop {
-        let measurement = dht.read(&mut delay).unwrap();
+        let _measurement = dht.read(&mut delay).unwrap();
         match pump.turn_on() {
             Ok(_) => info!("Pump on"),
             Err(_) => panic!("Could not turn on pump"),
