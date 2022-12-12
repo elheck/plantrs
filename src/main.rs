@@ -1,26 +1,24 @@
 #![no_std]
 #![no_main]
 
-
 use bsp::entry;
 use defmt::{info, panic};
 use defmt_rtt as _;
 use panic_probe as _;
 
-use rp_pico as bsp;
 use bsp::hal::{
     clocks::{init_clocks_and_plls, Clock},
     pac,
     sio::Sio,
     watchdog::Watchdog,
 };
+use rp_pico as bsp;
 
 mod pump;
 use crate::pump::Pump;
 
 mod dht;
 use crate::dht::Dht11;
-
 
 #[entry]
 fn main() -> ! {
@@ -41,7 +39,7 @@ fn main() -> ! {
     )
     .ok()
     .unwrap();
-            
+
     let mut delay = cortex_m::delay::Delay::new(core.SYST, clocks.system_clock.freq().to_Hz());
 
     let pins = bsp::Pins::new(
@@ -59,15 +57,15 @@ fn main() -> ! {
     let mut dht = Dht11::new(dht_pin.into());
 
     loop {
-        dht.read(&mut delay).unwrap();
-        match pump.turn_on(){
+        let measurement = dht.read(&mut delay).unwrap();
+        match pump.turn_on() {
             Ok(_) => info!("Pump on"),
-            Err(_) => panic!("Could not turn on pump")
+            Err(_) => panic!("Could not turn on pump"),
         };
         delay.delay_ms(1000);
-        match pump.turn_off(){
+        match pump.turn_off() {
             Ok(_) => info!("Pump off"),
-            Err(_) => panic!("Could not turn off pump")
+            Err(_) => panic!("Could not turn off pump"),
         };
         delay.delay_ms(1000);
     }
