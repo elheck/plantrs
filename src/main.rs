@@ -10,6 +10,7 @@ use bsp::hal::{
     clocks::{init_clocks_and_plls, Clock},
     pac,
     sio::Sio,
+    adc::Adc,
     watchdog::Watchdog,
 };
 use rp_pico as bsp;
@@ -19,6 +20,9 @@ use crate::pump::Pump;
 
 mod dht;
 use crate::dht::Dht11;
+
+mod analog_ph_meter;
+use crate::analog_ph_meter::{PhMeasurement, PhProbe};
 
 #[entry]
 fn main() -> ! {
@@ -49,15 +53,20 @@ fn main() -> ! {
         &mut peripherals.RESETS,
     );
 
+    let adc = Adc::new(peripherals.ADC, &mut peripherals.RESETS);
+
     let led_pin = pins.led.into_push_pull_output();
     let pump_pin = pins.gpio4.into_push_pull_output();
     let dht_pin = pins.gpio3.into_readable_output();
+    let ph_pin = pins.gpio26.into_floating_input();
 
     let mut pump = Pump::new(led_pin.into(), pump_pin.into());
     let mut dht = Dht11::new(dht_pin.into());
+    let mut ph_meter = PhProbe::new(ph_pin.into(), adc);
 
     loop {
-        let _measurement = dht.read(&mut delay).unwrap();
+        let measurement = dht.read(&mut delay).unwrap();
+        info!("Humidity: {}, Temp: {}\n", measurement.temperature, measurement.relative_humidity);
         match pump.turn_on() {
             Ok(_) => info!("Pump on"),
             Err(_) => panic!("Could not turn on pump"),
