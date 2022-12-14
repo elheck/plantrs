@@ -62,7 +62,7 @@ fn main() -> ! {
 
     let mut pump = Pump::new(led_pin.into(), pump_pin.into());
     let mut dht = Dht11::new(dht_pin.into());
-    let mut ph_meter = PhProbe::new(ph_pin.into(), adc);
+    let mut ph_meter = PhProbe::new(ph_pin.into());
 
     loop {
         let measurement = dht.read(&mut delay).unwrap();
