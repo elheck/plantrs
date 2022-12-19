@@ -10,7 +10,7 @@ impl Dht11 {
         Dht11 { read_pin: gpio }
     }
 
-    pub fn read(&mut self, delay: &mut dyn Delay) -> Result<Reading, DhtError<Error>> {
+    pub fn read<T: Delay>(&mut self, delay: &mut T) -> Result<Reading, DhtError<Error>> {
         dht_sensor::dht11::Reading::read(delay, &mut self.read_pin)
     }
 }
