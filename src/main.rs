@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 
-use bsp::{entry, hal::pio::MovStatusConfig};
+use bsp::{entry};
 use defmt::{info, panic};
 use defmt_rtt as _;
 use panic_probe as _;
@@ -72,10 +72,10 @@ fn main() -> ! {
 
     loop {
         let measurement = dht.read(&mut delay).unwrap();
-        let ph = ph_meter.read(& mut adc);
-        let moisture = soil_moisture_sensor.read_blocking(&mut adc, &mut delay);
         info!("Humidity: {}, Temp: {}\n", measurement.temperature, measurement.relative_humidity);
+        let ph = ph_meter.read(& mut adc);
         info!("Ph is currently {}\n", ph);
+        let moisture = soil_moisture_sensor.read_blocking(&mut adc, &mut delay);
         info!("Soil moisture analog value is currently {}\n", moisture);
         match pump.turn_on() {
             Ok(_) => info!("Pump on"),
