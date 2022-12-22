@@ -1,0 +1,2 @@
+- The basic idea of the system is to create a fully automatic hydroponics grow system, which will live in an enclosed environment so that every factor can be controlled.
+- The system is implemented in Rust using a [[Raspberry Pi Pico]] micro controller.

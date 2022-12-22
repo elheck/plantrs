@@ -1,5 +1,7 @@
 # plantrs
 
+See Obsidian notes in /docs folder.
+
 ## Scope
 - Raspi pi pico 
 - inspired by https://github.com/rp-rs/rp2040-project-template
