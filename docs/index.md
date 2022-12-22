@@ -1,4 +1,0 @@
-# General
-
--  [[System concept]]
-- [[ Setup]]

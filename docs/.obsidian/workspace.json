@@ -34,19 +34,6 @@
             }
           },
           {
-            "id": "292824916f48d159",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "index.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
             "id": "15378f9f53c901be",
             "type": "leaf",
             "state": {
@@ -73,7 +60,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -139,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "Hardware/Sensors.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -156,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "Hardware/Sensors.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -179,7 +166,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "Hardware/Sensors.md"
               }
             }
           }
@@ -193,15 +180,15 @@
   },
   "active": "0a977d570f7fe0dd",
   "lastOpenFiles": [
+    "Images/bed6afe4-af01-4a6a-b2d0-d768934f6ab5.jpeg",
+    "_Dashboard.md",
     "Hardware/Sensors.md",
-    "PH Meter.md",
+    "Hardware/PH Meter.md",
     "General/Setup.md",
-    "index.md",
     "General/System concept.md",
     "Hardware/MQ135.md",
     "Hardware/PCB.md",
     "Hardware/DHT11.md",
-    "Hardware/Raspberry Pi Pico.md",
-    "Hardware/Actuators.md"
+    "Hardware/Raspberry Pi Pico.md"
   ]
 }
