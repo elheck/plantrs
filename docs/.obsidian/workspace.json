@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hardware/Sensors.md",
+                "file": "index.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -139,7 +139,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Hardware/Sensors.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -156,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Hardware/Sensors.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -179,7 +179,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hardware/Sensors.md"
+                "file": "index.md"
               }
             }
           }
@@ -191,12 +191,12 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "292824916f48d159",
+  "active": "0a977d570f7fe0dd",
   "lastOpenFiles": [
-    "PH Meter.md",
     "Hardware/Sensors.md",
+    "PH Meter.md",
     "General/Setup.md",
-    "_Dashboard.md",
+    "index.md",
     "General/System concept.md",
     "Hardware/MQ135.md",
     "Hardware/PCB.md",
