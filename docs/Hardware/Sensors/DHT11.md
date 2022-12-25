@@ -1,4 +1,4 @@
-[[Sensors]]
+[[Sensors Moc]]
 [[MQ135]]
 
 - Datasheet Sensor:  https://www.mouser.com/datasheet/2/758/DHT11-Technical-Data-Sheet-Translated-Version-1143054.pdf

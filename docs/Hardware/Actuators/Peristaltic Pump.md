@@ -1,4 +1,4 @@
-[[Actuators]]
+[[Actuators Moc]]
 
 - Based on [[Nema 17]] stepper motor
 - Peristaltic part from printables [link](https://www.printables.com/model/63883-peristaltic-pump-simple-working-for-an-automated-f)

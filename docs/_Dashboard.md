@@ -1,6 +1,6 @@
 # General
 -  [[System concept]]
-- [[ Setup]]
+- [[ Setup Moc]]
 
 # Knowledge
 - [[Plant Research]]
