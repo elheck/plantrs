@@ -1,14 +1,14 @@
 use embedded_hal::digital::v2::OutputPin;
 use rp_pico::hal::gpio::{DynPin, Error};
 
-pub struct Pump {
+pub struct WaterPump {
     indicator: DynPin,
     pump_switch: DynPin,
 }
 
-impl Pump {
+impl WaterPump {
     pub fn new(indicator: DynPin, pump_switch: DynPin) -> Self {
-        Pump {
+        WaterPump {
             indicator,
             pump_switch,
         }

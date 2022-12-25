@@ -25,5 +25,6 @@ where
     delay.delay_ms(DELAY_TIME);
     let value: u16 = adc.read(&mut self.read_pin).unwrap();
     self.power_switch.set_low().unwrap();
+    value
   }
 }
