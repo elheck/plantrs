@@ -1,4 +1,5 @@
 [[Setup Moc]]
+[[_Dashboard]]
 
 ## Used sensors
 - [[PH Meter]]

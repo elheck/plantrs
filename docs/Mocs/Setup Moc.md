@@ -8,3 +8,4 @@
 # Hardware
 - To debug an flash your software onto the device use another [[Raspberry Pi Pico]] as a [[Picoprobe]] device
 - Connect the [[Sensors Moc]] and [[Actuators Moc]] according to the [[PCB]] design
+- Other peripherals ([[Peripherals Moc]]) are needed to guarantee correct operation
