@@ -24,9 +24,6 @@ use crate::dht::Dht11;
 mod analog_ph_meter;
 use crate::analog_ph_meter::PhProbe;
 
-mod soil_moisture;
-use crate::soil_moisture::SoilMoistureSensor;
-
 #[entry]
 fn main() -> ! {
     info!("Program start");
@@ -58,25 +55,16 @@ fn main() -> ! {
 
     let mut adc = Adc::new(peripherals.ADC, &mut peripherals.RESETS);
 
-    let led_pin = pins.led.into_push_pull_output();
-    let water_pump_pin = pins.gpio4.into_push_pull_output();
-    let dht_pin = pins.gpio3.into_readable_output();
-    let ph_pin = pins.gpio26.into_floating_input();
-    let soil_moisture_power_pin = pins.gpio6.into_push_pull_output();
-    let soil_moisture_read_pin = pins.gpio27.into_floating_input();
 
-    let mut water_pump = WaterPump::new(led_pin.into(), water_pump_pin.into());
-    let mut dht = Dht11::new(dht_pin.into());
-    let mut ph_meter = PhProbe::new(ph_pin);
-    let mut soil_moisture_sensor = SoilMoistureSensor::new(soil_moisture_read_pin, soil_moisture_power_pin.into());
+    let mut water_pump = WaterPump::new(pins.led.into(), pins.gpio4.into());
+    let mut dht = Dht11::new(pins.gpio3.into());
+    let mut ph_meter = PhProbe::new(pins.gpio26.into_floating_input());
 
     loop {
         let measurement = dht.read(&mut delay).unwrap();
         info!("Humidity: {}, Temp: {}\n", measurement.temperature, measurement.relative_humidity);
         let ph = ph_meter.read(& mut adc);
         info!("Ph is currently {}\n", ph);
-        let moisture = soil_moisture_sensor.read_blocking(&mut adc, &mut delay);
-        info!("Soil moisture analog value is currently {}\n", moisture);
         match water_pump.turn_on() {
             Ok(_) => info!("Pump on"),
             Err(_) => panic!("Could not turn on pump"),

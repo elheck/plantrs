@@ -8,46 +8,14 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8d3b13a6e4afa2b7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Mocs/Sensors Moc.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8dbd73d29f02f102",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_Dashboard.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
             "id": "12ba36e42243ff2f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Mocs/Sensors Moc.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
+              "type": "graph",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -113,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mocs/Sensors Moc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mocs/Sensors Moc.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Mocs/Sensors Moc.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -176,17 +140,17 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "0a977d570f7fe0dd",
+  "active": "12ba36e42243ff2f",
   "lastOpenFiles": [
+    "Mocs/Sensors Moc.md",
+    "Hardware/Sensors/MQ135.md",
+    "Hardware/Actuators/Peristaltic Pump.md",
     "Mocs/Actuators Moc.md",
     "General/System concept.md",
     "Mocs/Setup Moc.md",
     "_Dashboard.md",
     "Chemicals/Nutrients.md",
-    "Mocs/Sensors Moc.md",
-    "Hardware/Actuators/Peristaltic Pump.md",
     "Chemicals/PH Up.md",
-    "Chemicals/PH Down.md",
-    "Plant Research/Plant Research.md"
+    "Chemicals/PH Down.md"
   ]
 }

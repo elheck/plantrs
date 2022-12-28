@@ -1,5 +1,8 @@
 use embedded_hal::adc::{OneShot, Channel};
-use rp_pico::{hal::Adc};
+use rp_pico::hal::Adc;
+
+const ADC_12_BIT_RESOLUTION_QUANTITY: f32 = 4096.0;
+const VOLTAGE_LIMIT_ADC: f32 = 3.3;
 
 pub struct PhProbe<T> 
 where
@@ -18,10 +21,9 @@ where
 
     pub fn read(&mut self,  adc: &mut Adc) -> f32{
       let reading: u16 = adc.read(&mut self.analog_read_pin).unwrap();
-      let quant_per_volt = 4096.0 / 3.3;
+      let quant_per_volt = ADC_12_BIT_RESOLUTION_QUANTITY / VOLTAGE_LIMIT_ADC;
       let voltage = reading as f32 / quant_per_volt;
       // atlas scientific formula https://files.atlas-scientific.com/Gravity-pH-datasheet.pdf
-      let ph = (-5.648 * voltage) + 15.509;
-      ph
+      (-5.648 * voltage) + 15.509
     }
 }
