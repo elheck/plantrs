@@ -1,16 +1,16 @@
 #![no_std]
 #![no_main]
 
-use bsp::{entry};
+use bsp::entry;
 use defmt::{info, panic};
 use defmt_rtt as _;
 use panic_probe as _;
 
 use bsp::hal::{
+    adc::Adc,
     clocks::{init_clocks_and_plls, Clock},
     pac,
     sio::Sio,
-    adc::Adc,
     watchdog::Watchdog,
 };
 use rp_pico as bsp;
@@ -55,15 +55,17 @@ fn main() -> ! {
 
     let mut adc = Adc::new(peripherals.ADC, &mut peripherals.RESETS);
 
-
     let mut water_pump = WaterPump::new(pins.led.into(), pins.gpio4.into());
     let mut dht = Dht11::new(pins.gpio3.into());
     let mut ph_meter = PhProbe::new(pins.gpio26.into_floating_input());
 
     loop {
         let measurement = dht.read(&mut delay).unwrap();
-        info!("Humidity: {}, Temp: {}\n", measurement.temperature, measurement.relative_humidity);
-        let ph = ph_meter.read(& mut adc);
+        info!(
+            "Humidity: {}, Temp: {}\n",
+            measurement.temperature, measurement.relative_humidity
+        );
+        let ph = ph_meter.read(&mut adc);
         info!("Ph is currently {}\n", ph);
         match water_pump.turn_on() {
             Ok(_) => info!("Pump on"),
