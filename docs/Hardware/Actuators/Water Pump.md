@@ -1,1 +1,4 @@
 [[Actuators Moc]]
+
+- Currently this project only concerns 12V 1A pumps like [this](https://www.amazon.de/HSEAMALL-Brushless-Wasserpumpe-Amphibienpumpe-Gartenteich/dp/B07L89V1N6/ref=asc_df_B07L89V1N6/?tag=googshopde-21&linkCode=df0&hvadid=309096526486&hvpos=&hvnetw=g&hvrand=2684179723325225244&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9042796&hvtargid=pla-617647155558&psc=1&th=1&psc=1&tag=&ref=&adgrpid=62671969918&hvpone=&hvptwo=&hvadid=309096526486&hvpos=&hvnetw=g&hvrand=2684179723325225244&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9042796&hvtargid=pla-617647155558) one and the electronics are made for only 12A 2A ratings
+- 
