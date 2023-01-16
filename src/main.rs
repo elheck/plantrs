@@ -55,7 +55,7 @@ fn main() -> ! {
 
     let mut adc = Adc::new(peripherals.ADC, &mut peripherals.RESETS);
 
-    let mut water_pump = WaterPump::new(pins.led.into(), pins.gpio4.into());
+    let mut water_pump = WaterPump::new(pins.led.into_push_pull_output(), pins.gpio4.into_push_pull_output());
     let mut dht = Dht11::new(pins.gpio3.into());
     let mut ph_meter = PhProbe::new(pins.gpio26.into_floating_input());
 

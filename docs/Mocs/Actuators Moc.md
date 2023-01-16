@@ -7,5 +7,5 @@
 - 1 [[Circulation Fan]]
 - 1 [[Air Intake Fan]]
 - 1 [[Carbon Filter Fan]]
-- 1 Relay for the [[Air Moisturizer]]
+- 1 Relay for the [[Humidifier]]
 - 1 [[Superoxigenation Pump]]
