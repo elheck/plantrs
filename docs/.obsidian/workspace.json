@@ -39,7 +39,98 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hardware/Actuators/Superoxigenation Pump.md",
+                "file": "Mocs/Peripherals Moc.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "aa302ab67ef448fd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Hardware/Peripherals/EEPROM.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "312f7096c91789ef",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mocs/Peripherals Moc.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "402aa27d70b9903f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Hardware/Peripherals/Oled display.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "996d1c42bdc388d4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mocs/Sensors Moc.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e2c824e542118e02",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Hardware/Sensors/TDS Meter.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c136c47686aebd93",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mocs/Sensors Moc.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "688582de5965ef49",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Hardware/Sensors/EC Meter.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -60,7 +151,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -126,7 +217,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Hardware/Actuators/Superoxigenation Pump.md",
+                "file": "Hardware/Sensors/EC Meter.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -143,7 +234,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Hardware/Actuators/Superoxigenation Pump.md",
+                "file": "Hardware/Sensors/EC Meter.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -166,7 +257,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hardware/Actuators/Superoxigenation Pump.md"
+                "file": "Hardware/Sensors/EC Meter.md"
               }
             }
           }
@@ -189,17 +280,17 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "0782f759f812ce56",
+  "active": "688582de5965ef49",
   "lastOpenFiles": [
+    "Hardware/Peripherals/Oled display.md",
+    "Hardware/Peripherals/Display for Calibration.md",
     "Mocs/Actuators Moc.md",
-    "Hardware/Actuators/Humidifier.md",
-    "Hardware/Actuators/Water Pump.md",
-    "Hardware/Actuators/Superoxigenation Pump.md",
-    "Hardware/Actuators/Circulation Fan.md",
-    "Hardware/Actuators/Carbon Filter Fan.md",
-    "Chemicals/Nutrients.md",
-    "Hardware/Actuators/Peristaltic Pump.md",
-    "Software/Recipe.md",
-    "Hardware/Actuators/Air Intake Fan.md"
+    "Mocs/Setup Moc.md",
+    "Mocs/Sensors Moc.md",
+    "Hardware/Sensors/EC Meter.md",
+    "Hardware/Sensors/TDS Meter.md",
+    "Mocs/Peripherals Moc.md",
+    "Hardware/Peripherals/EEPROM.md",
+    "Mocs/Runtime Moc.md"
   ]
 }

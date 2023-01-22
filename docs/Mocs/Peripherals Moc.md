@@ -2,3 +2,4 @@
 [[_Dashboard]]
 
 - [[EEPROM]]
+- [[Oled display]]
