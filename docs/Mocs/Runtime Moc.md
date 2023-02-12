@@ -2,5 +2,5 @@
 [[_Dashboard]]
 
 # Features
-- Manual setting of [[Growing Phase]]
+- Manual setting of [[Growing Phase]] which needs some way of doing [[user input]]
 - [[Power Failure Recovery]]

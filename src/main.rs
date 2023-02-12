@@ -55,15 +55,21 @@ fn main() -> ! {
 
     let mut adc = Adc::new(peripherals.ADC, &mut peripherals.RESETS);
 
-    let mut water_pump = WaterPump::new(pins.led.into_push_pull_output(), pins.gpio4.into_push_pull_output());
-    let mut dht = Dht11::new(pins.gpio3.into());
-    let mut ph_meter = PhProbe::new(pins.gpio26.into_floating_input());
+    let mut water_pump = WaterPump::new(pins.gpio7.into_push_pull_output(), pins.gpio4.into_push_pull_output());
+    let mut inside_dht = Dht11::new(pins.gpio15.into());
+    let mut outside_dht = Dht11::new(pins.gpio18.into());
+    let mut ph_meter = PhProbe::new(pins.gpio28.into_floating_input());
 
     loop {
-        let measurement = dht.read(&mut delay).unwrap();
+        let measurement_inside = inside_dht.read(&mut delay).unwrap();
         info!(
-            "Humidity: {}, Temp: {}\n",
-            measurement.temperature, measurement.relative_humidity
+            "Inside Humidity: {}, Temp: {}\n",
+            measurement_inside.temperature, measurement_inside.relative_humidity
+        );
+        let measurement_outside = outside_dht.read(&mut delay).unwrap();
+        info!(
+            "Outside Humidity: {}, Temp: {}\n",
+            measurement_outside.temperature, measurement_outside.relative_humidity
         );
         let ph = ph_meter.read(&mut adc);
         info!("Ph is currently {}\n", ph);
