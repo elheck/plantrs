@@ -130,7 +130,59 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hardware/Sensors/EC Meter.md",
+                "file": "Mocs/Runtime Moc.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "707a138b87663bc6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_Dashboard.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f840c083578d3808",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mocs/Setup Moc.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b7af9df5ffa36fac",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Hardware/PCB.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "25e89cc8e335db0e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Software/user input.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -151,7 +203,7 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 13
       }
     ],
     "direction": "vertical"
@@ -217,7 +269,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Hardware/Sensors/EC Meter.md",
+                "file": "Software/user input.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -234,7 +286,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Hardware/Sensors/EC Meter.md",
+                "file": "Software/user input.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -257,7 +309,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hardware/Sensors/EC Meter.md"
+                "file": "Software/user input.md"
               }
             }
           }
@@ -280,17 +332,17 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "688582de5965ef49",
+  "active": "25e89cc8e335db0e",
   "lastOpenFiles": [
-    "Hardware/Peripherals/Oled display.md",
-    "Hardware/Peripherals/Display for Calibration.md",
-    "Mocs/Actuators Moc.md",
+    "Hardware/PCB.md",
+    "Software/Power Failure Recovery.md",
     "Mocs/Setup Moc.md",
-    "Mocs/Sensors Moc.md",
-    "Hardware/Sensors/EC Meter.md",
+    "_Dashboard.md",
+    "Mocs/Runtime Moc.md",
+    "Software/user input.md",
+    "Hardware/Peripherals/Calibration User Input.md",
+    "Hardware/Sensors/MH-Z19C.md",
     "Hardware/Sensors/TDS Meter.md",
-    "Mocs/Peripherals Moc.md",
-    "Hardware/Peripherals/EEPROM.md",
-    "Mocs/Runtime Moc.md"
+    "Plant Research/Growing Phase.md"
   ]
 }
