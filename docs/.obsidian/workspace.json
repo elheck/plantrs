@@ -182,7 +182,20 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Software/user input.md",
+                "file": "Mocs/Actuators Moc.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3861ab7f6e06bddc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Hardware/Actuators/TMC429 Motion Controller.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -203,7 +216,7 @@
             }
           }
         ],
-        "currentTab": 13
+        "currentTab": 14
       }
     ],
     "direction": "vertical"
@@ -232,7 +245,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tmc",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -269,7 +282,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Software/user input.md",
+                "file": "Hardware/Actuators/TMC429 Motion Controller.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -286,7 +299,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Software/user input.md",
+                "file": "Hardware/Actuators/TMC429 Motion Controller.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -309,7 +322,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Software/user input.md"
+                "file": "Hardware/Actuators/TMC429 Motion Controller.md"
               }
             }
           }
@@ -332,17 +345,17 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "25e89cc8e335db0e",
+  "active": "3861ab7f6e06bddc",
   "lastOpenFiles": [
+    "Hardware/Actuators/TMC 2209.md",
+    "Hardware/Actuators/TMC429 Motion Controller.md",
+    "Mocs/Actuators Moc.md",
+    "Hardware/Actuators/Nema 17.md",
+    "Software/user input.md",
     "Hardware/PCB.md",
     "Software/Power Failure Recovery.md",
     "Mocs/Setup Moc.md",
     "_Dashboard.md",
-    "Mocs/Runtime Moc.md",
-    "Software/user input.md",
-    "Hardware/Peripherals/Calibration User Input.md",
-    "Hardware/Sensors/MH-Z19C.md",
-    "Hardware/Sensors/TDS Meter.md",
-    "Plant Research/Growing Phase.md"
+    "Mocs/Runtime Moc.md"
   ]
 }

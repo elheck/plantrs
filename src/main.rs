@@ -24,6 +24,9 @@ use crate::dht::Dht11;
 mod analog_ph_meter;
 use crate::analog_ph_meter::PhProbe;
 
+mod tmc429;
+
+
 #[entry]
 fn main() -> ! {
     info!("Program start");
@@ -59,6 +62,7 @@ fn main() -> ! {
     let mut inside_dht = Dht11::new(pins.gpio15.into());
     let mut outside_dht = Dht11::new(pins.gpio18.into());
     let mut ph_meter = PhProbe::new(pins.gpio28.into_floating_input());
+
 
     loop {
         let measurement_inside = inside_dht.read(&mut delay).unwrap();
