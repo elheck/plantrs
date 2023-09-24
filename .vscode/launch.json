@@ -18,7 +18,7 @@
             // If you have the Pico SDK installed, allows thez
             // display of the RP2040 CPU registers in VS Code
             "svdFile": "${workspaceFolder}/rp2040.svd",
-            "runToMain": true,
+            "runToEntryPoint": "main",
             "preLaunchCommands": [
                 "monitor init",
                 "monitor reset init",

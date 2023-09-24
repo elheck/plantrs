@@ -1,19 +1,20 @@
 #![no_std]
 #![no_main]
 
-use bsp::entry;
+use rp_pico::entry;
 use defmt::{info, panic};
 use defmt_rtt as _;
 use panic_probe as _;
 
-use bsp::hal::{
+use rp_pico::hal::{
     adc::Adc,
     clocks::{init_clocks_and_plls, Clock},
     pac,
     sio::Sio,
     watchdog::Watchdog,
 };
-use rp_pico as bsp;
+use embedded_hal::digital::v2::OutputPin;
+
 
 mod water_pump;
 use crate::water_pump::WaterPump;
@@ -24,7 +25,7 @@ use crate::dht::Dht11;
 mod analog_ph_meter;
 use crate::analog_ph_meter::PhProbe;
 
-mod tmc429;
+//mod tmc429;
 
 
 #[entry]
@@ -36,7 +37,7 @@ fn main() -> ! {
     let sio = Sio::new(peripherals.SIO);
 
     let clocks = init_clocks_and_plls(
-        bsp::XOSC_CRYSTAL_FREQ,
+        rp_pico::XOSC_CRYSTAL_FREQ,
         peripherals.XOSC,
         peripherals.CLOCKS,
         peripherals.PLL_SYS,
@@ -49,7 +50,7 @@ fn main() -> ! {
 
     let mut delay = cortex_m::delay::Delay::new(core.SYST, clocks.system_clock.freq().to_Hz());
 
-    let pins = bsp::Pins::new(
+    let pins = rp_pico::Pins::new(
         peripherals.IO_BANK0,
         peripherals.PADS_BANK0,
         sio.gpio_bank0,
@@ -62,8 +63,9 @@ fn main() -> ! {
     let mut inside_dht = Dht11::new(pins.gpio15.into());
     let mut outside_dht = Dht11::new(pins.gpio18.into());
     let mut ph_meter = PhProbe::new(pins.gpio28.into_floating_input());
+    let mut onboard_led = pins.led.into_push_pull_output();
 
-
+    onboard_led.set_high().unwrap();
     loop {
         let measurement_inside = inside_dht.read(&mut delay).unwrap();
         info!(
