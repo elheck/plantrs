@@ -1,11 +1,12 @@
 #![no_std]
 #![no_main]
 
-use rp_pico::entry;
 use defmt::{info, panic};
 use defmt_rtt as _;
 use panic_probe as _;
+use rp_pico::entry;
 
+use embedded_hal::digital::v2::OutputPin;
 use rp_pico::hal::{
     adc::Adc,
     clocks::{init_clocks_and_plls, Clock},
@@ -13,8 +14,6 @@ use rp_pico::hal::{
     sio::Sio,
     watchdog::Watchdog,
 };
-use embedded_hal::digital::v2::OutputPin;
-
 
 mod water_pump;
 use crate::water_pump::WaterPump;
@@ -26,7 +25,6 @@ mod analog_ph_meter;
 use crate::analog_ph_meter::PhProbe;
 
 //mod tmc429;
-
 
 #[entry]
 fn main() -> ! {
@@ -59,7 +57,10 @@ fn main() -> ! {
 
     let mut adc = Adc::new(peripherals.ADC, &mut peripherals.RESETS);
 
-    let mut water_pump = WaterPump::new(pins.gpio7.into_push_pull_output(), pins.gpio4.into_push_pull_output());
+    let mut water_pump = WaterPump::new(
+        pins.gpio7.into_push_pull_output(),
+        pins.gpio4.into_push_pull_output(),
+    );
     let mut inside_dht = Dht11::new(pins.gpio15.into());
     let mut outside_dht = Dht11::new(pins.gpio18.into());
     let mut ph_meter = PhProbe::new(pins.gpio28.into_floating_input());
