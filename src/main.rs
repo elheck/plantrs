@@ -33,15 +33,15 @@ fn main() -> ! {
     .ok()
     .unwrap();
 
-    let mut delay = cortex_m::delay::Delay::new(core.SYST, clocks.system_clock.freq().to_Hz());
+    let _delay = cortex_m::delay::Delay::new(core.SYST, clocks.system_clock.freq().to_Hz());
 
-    let pins = rp_pico::Pins::new(
+    let _pins = rp_pico::Pins::new(
         peripherals.IO_BANK0,
         peripherals.PADS_BANK0,
         sio.gpio_bank0,
         &mut peripherals.RESETS,
     );
-    loop {}
+    panic!()
 }
 
 // End of file
